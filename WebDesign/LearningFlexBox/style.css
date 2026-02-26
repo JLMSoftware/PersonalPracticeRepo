@@ -1,0 +1,130 @@
+body{
+    min-height: 800px;
+    
+    border: 8px solid black;
+    
+    
+    /*How to center a div*/
+    display: flex;
+    
+    justify-content: center;
+    /* Aligns along x axis in parent div*/
+    
+    align-items: center; 
+    /* Aligns along y axis in parent div*/
+
+    /*
+        You can also use justify-content space-around and space-between.
+        This puts spaces between each but with space-around they dont touch
+        the edges of the parent div. 
+
+        You can do space-evenly instead of around to ensure ALL boxes
+        are spaced evenly unlike space-around. 
+    */
+
+    /* flex-direction: row-reverse; */
+    /*
+        controls direction of main axis from left to right.
+        The default flex direction is row. 
+        
+        You can also do row-reverse to align from right to left.
+        Row-reverse also changes where flex-start and end are to their
+        opposite.
+
+    */
+
+    /* flex direction: column; */
+
+    /*
+        This can set the main axis of your flex box to the y axis. 
+        To adjust horizontally use "align-items" instead of justify-content. 
+
+    */
+
+
+    /* gap: 20px; */
+    /* controls the gap size in between items
+       You can adjust column and row gaps sizes with 
+       column-gap and row-gap respectively. 
+    */
+
+    /* flex-wrap: wrap; */
+    /* controls how items move while page is readjusted.
+        Wrap puts items on next line no wrap shrinks items dynamically.
+    */
+
+    /* NOTE FOR WHEN YOU HAVE ITEMS BEING FLEX WRAPPED */
+    /*
+        As items become wrapped onto the next line they gain their own axis.
+        So each row has its own x and y it can be aligned on.
+        You can adjust how these are placed with align items.
+    */
+
+    /* align-content: space-around; */
+
+    /*  
+        This is how you align objects in a parent node that are being wrapped
+        onto new rows.
+        Has default value of space-around. This is why wrapped objects 
+        have large rows between them. 
+
+        REMEMBER align content is all lines adjusted together while 
+        align-items controls rows along their own cross axis individually.
+
+
+    */
+
+
+}   
+
+.box{
+    
+    height: 100PX;
+    width: 100px;
+    background-color: brown;
+    font-size: 40pt;
+    /* aligns item to the center of their block*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 1;
+    /*  Setting Flex shrink to zero causes items to overflow out their own flexbox
+        Setting flex shrink to one causes items to shrink dynamically with the page.
+        The default value for this prop. is 1.
+        If you set this value on an item to 5 it'll shrink 5x faster than the other items.
+    */
+
+    flex-grow: 0;
+    /*   This property alows items to grow along their default axis. 
+         The default value for this is 0, and to turn it on set it to 1.
+         If you set this value on an item to 5 it'll grow 5x faster than the other items.
+
+    */
+
+    max-width: 200px;
+    /*Setting max width and min width in conjunction with flexgrow or shrink allows items
+     to grow or shrink to a set size. But once an item shrinks to its mind width it will overflow 
+     outside the flex box.
+     
+     
+     */
+    
+   
+
+/*Causes items in body to wrap once it reaches its max width of 575px*/
+/*      @media(max-width: 575px){
+        body{
+            flex-wrap: wrap;
+        }
+     }
+
+ */
+}
+
+
+
+/*TO align items independently of their group use align-self*/
+/*  YOu can use margin-right to set an item to the left while everything si flex start. 
+    This is like how a nav bar usually has the logo on the left with the items being on the right.
+*/
